@@ -47,3 +47,7 @@ if ('serviceWorker' in navigator) {
             console.error('Service Worker registration failed:', error);
         });
 }
+
+window.addEventListener('beforeunload', (event) => {
+    localStorage.setItem('pwaInstallPromptShown', 'false');
+});
