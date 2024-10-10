@@ -54,3 +54,10 @@ if ('serviceWorker' in navigator) {
 window.addEventListener('beforeunload', (event) => {
     localStorage.setItem('pwaInstallPromptShown', 'false');
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        const getAppButton = document.getElementById('getAppButton');
+        getAppButton.style.display = 'block';
+    }, 5000); // 5000 миллисекунд = 5 секунд
+});
