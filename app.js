@@ -4,21 +4,26 @@ window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
 
-  // Show button
-  const installButton = document.getElementById('installButton');
-  installButton.style.display = 'block';
+  const loadingDialog = document.getElementById('loadingDialog');
+  loadingDialog.style.display = 'block';
 
-  installButton.addEventListener('click', () => {
-    console.log('clicked')
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the install prompt');
-      } else {
-        console.log('User dismissed the install prompt');
-      }
-      deferredPrompt = null;
-    });
+  setTimeout(() => {
+    loadingDialog.style.display = 'none';
+    const installButton = document.getElementById('installButton');
+    installButton.style.display = 'block';
+  }, 5000);
+});
+
+document.getElementById('installButton').addEventListener('click', () => {
+  deferredPrompt.prompt();
+
+  deferredPrompt.userChoice.then((choiceResult) => {
+    if (choiceResult.outcome === 'accepted') {
+      console.log('User accepted the install prompt');
+    } else {
+      console.log('User dismissed the install prompt');
+    }
+    deferredPrompt = null;
   });
 });
 
