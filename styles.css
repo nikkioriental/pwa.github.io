@@ -7,3 +7,16 @@ body {
 h1 {
   color: #333;
 }
+
+#installButton {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#installButton:hover {
+  background-color: #45a049;
+}
