@@ -8,6 +8,9 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
     if (pwaPromptStatus === null || pwaPromptStatus === 'false') {
 
+        const getAppButton = document.getElementById('getAppButton');
+        getAppButton.style.display = 'none';
+
         const installButton = document.getElementById('installButton');
         installButton.style.display = 'none';
 
