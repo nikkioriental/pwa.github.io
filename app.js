@@ -30,6 +30,8 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 
 document.getElementById('installButton').addEventListener('click', () => {
+    if (deferredPrompt === undefined || deferredPrompt === null) return;
+
     deferredPrompt.prompt();
 
     deferredPrompt.userChoice.then((choiceResult) => {
@@ -63,18 +65,14 @@ document.getElementById('getAppButton').addEventListener('click', () => {
 
     const loadingDialog = document.getElementById('loadingDialog');
     loadingDialog.style.display = 'block';
-});
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     console.log('DOMContentLoaded')
-//     setTimeout(() => {
-//         console.log('setTimeout')
-//         if (deferredPrompt === undefined || deferredPrompt === null) {
-//             const loadingDialog = document.getElementById('loadingDialog');
-//             loadingDialog.style.display = 'none';
-//
-//             const getAppButton = document.getElementById('getAppButton');
-//             getAppButton.style.display = 'block';
-//         }
-//     }, 5000); // 5000 миллисекунд = 5 секунд
-// });
+    setTimeout(() => {
+        if (deferredPrompt === undefined || deferredPrompt === null) {
+            const loadingDialog = document.getElementById('loadingDialog');
+            loadingDialog.style.display = 'none';
+
+            const getAppButton = document.getElementById('installButton');
+            getAppButton.style.display = 'block';
+        }
+    }, 5000);
+});
