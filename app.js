@@ -57,16 +57,24 @@ window.addEventListener('beforeunload', (event) => {
     localStorage.setItem('pwaInstallPromptShown', 'false');
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOMContentLoaded')
-    setTimeout(() => {
-        console.log('setTimeout')
-        if (deferredPrompt === undefined || deferredPrompt === null) {
-            const loadingDialog = document.getElementById('loadingDialog');
-            loadingDialog.style.display = 'none';
+document.getElementById('getAppButton').addEventListener('click', () => {
+    const getAppButton = document.getElementById('getAppButton');
+    getAppButton.style.display = 'none';
 
-            const getAppButton = document.getElementById('getAppButton');
-            getAppButton.style.display = 'block';
-        }
-    }, 5000); // 5000 миллисекунд = 5 секунд
+    const loadingDialog = document.getElementById('loadingDialog');
+    loadingDialog.style.display = 'block';
 });
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     console.log('DOMContentLoaded')
+//     setTimeout(() => {
+//         console.log('setTimeout')
+//         if (deferredPrompt === undefined || deferredPrompt === null) {
+//             const loadingDialog = document.getElementById('loadingDialog');
+//             loadingDialog.style.display = 'none';
+//
+//             const getAppButton = document.getElementById('getAppButton');
+//             getAppButton.style.display = 'block';
+//         }
+//     }, 5000); // 5000 миллисекунд = 5 секунд
+// });
