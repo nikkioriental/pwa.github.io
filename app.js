@@ -62,7 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         console.log('setTimeout')
         if (deferredPrompt === undefined || deferredPrompt === null) {
-            console.log('setTimeout deferredPrompt === null')
+            const loadingDialog = document.getElementById('loadingDialog');
+            loadingDialog.style.display = 'none';
+
             const getAppButton = document.getElementById('getAppButton');
             getAppButton.style.display = 'block';
         }
