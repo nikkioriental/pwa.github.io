@@ -57,7 +57,9 @@ window.addEventListener('beforeunload', (event) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
-        const getAppButton = document.getElementById('getAppButton');
-        getAppButton.style.display = 'block';
+        if (deferredPrompt === null) {
+            const getAppButton = document.getElementById('getAppButton');
+            getAppButton.style.display = 'block';
+        }
     }, 5000); // 5000 миллисекунд = 5 секунд
 });
