@@ -4,7 +4,9 @@ window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
 
-    if (!localStorage.getItem('pwaInstallPromptShown')) {
+    const pwaPromptStatus = localStorage.getItem('pwaInstallPromptShown');
+
+    if (pwaPromptStatus === null || pwaPromptStatus === 'false') {
 
         const installButton = document.getElementById('installButton');
         installButton.style.display = 'none';
