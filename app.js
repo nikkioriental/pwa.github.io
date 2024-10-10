@@ -4,6 +4,9 @@ window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
 
+  const installButton = document.getElementById('installButton');
+  installButton.style.display = 'none';
+
   const loadingDialog = document.getElementById('loadingDialog');
   loadingDialog.style.display = 'block';
 
