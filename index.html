@@ -6,11 +6,6 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.json">
     <title>My PWA App</title>
-    <script>
-        window.addEventListener('beforeunload', () => {
-            localStorage.clear();
-        });
-    </script>
 </head>
 <body>
 <h1>Sample PWA App</h1>
@@ -21,6 +16,7 @@
     <p>Loading...</p>
 </div>
 <button id="installButton" style="display: none;">Install App</button>
-</body>
+
 <script src="app.js"></script>
+</body>
 </html>
