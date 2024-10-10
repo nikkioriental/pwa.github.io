@@ -1,6 +1,8 @@
 let deferredPrompt;
 
 window.addEventListener('beforeinstallprompt', (e) => {
+    console.log('beforeinstallprompt')
+
     e.preventDefault();
     deferredPrompt = e;
 
@@ -56,8 +58,11 @@ window.addEventListener('beforeunload', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOMContentLoaded')
     setTimeout(() => {
+        console.log('setTimeout')
         if (deferredPrompt === null) {
+            console.log('setTimeout deferredPrompt === null')
             const getAppButton = document.getElementById('getAppButton');
             getAppButton.style.display = 'block';
         }
