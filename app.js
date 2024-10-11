@@ -1,3 +1,11 @@
+const getAppButton = document.getElementById('getAppButton');
+const loadingDialog = document.getElementById('loadingDialog');
+const dialog = document.getElementById('dialog');
+const overlay = document.getElementById('overlay');
+const installButton = document.getElementById('installButton');
+const dialogInstallButton = document.getElementById('dialogInstallButton');
+
+
 let deferredPrompt;
 
 window.addEventListener('beforeinstallprompt', (e) => {
@@ -6,32 +14,34 @@ window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
 
-    const pwaPromptStatus = localStorage.getItem('pwaInstallPromptShown');
-
-    if (pwaPromptStatus === null || pwaPromptStatus === 'false') {
-
-        const getAppButton = document.getElementById('getAppButton');
-        getAppButton.style.display = 'none';
-
-        const installButton = document.getElementById('installButton');
-        installButton.style.display = 'none';
-
-        const loadingDialog = document.getElementById('loadingDialog');
-        loadingDialog.style.display = 'block';
-
-        setTimeout(() => {
-            loadingDialog.style.display = 'none';
-            const installButton = document.getElementById('installButton');
-            installButton.style.display = 'block';
-        }, 5000);
-    }
+    // const pwaPromptStatus = localStorage.getItem('pwaInstallPromptShown');
+    //
+    // if (pwaPromptStatus === null || pwaPromptStatus === 'false') {
+    //
+    //     getAppButton.style.display = 'none';
+    //     installButton.style.display = 'none';
+    //     loadingDialog.style.display = 'block';
+    //
+    //     setTimeout(() => {
+    //         loadingDialog.style.display = 'none';
+    //         installButton.style.display = 'block';
+    //     }, 5000);
+    // }
 
 
 });
 
-document.getElementById('installButton').addEventListener('click', () => {
-    if (deferredPrompt === undefined || deferredPrompt === null) return;
+installButton.addEventListener('click', () => {
+    if (deferredPrompt === undefined || deferredPrompt === null) {
+        dialog.style.display = 'block';
+        overlay.style.display = 'block';
+        return;
+    }
 
+    showInstallPromt();
+});
+
+function showInstallPromt() {
     deferredPrompt.prompt();
 
     deferredPrompt.userChoice.then((choiceResult) => {
@@ -43,7 +53,7 @@ document.getElementById('installButton').addEventListener('click', () => {
         localStorage.setItem('pwaInstallPromptShown', 'true');
         deferredPrompt = null;
     });
-});
+}
 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js')
@@ -59,20 +69,26 @@ window.addEventListener('beforeunload', (event) => {
     localStorage.setItem('pwaInstallPromptShown', 'false');
 });
 
-document.getElementById('getAppButton').addEventListener('click', () => {
-    const getAppButton = document.getElementById('getAppButton');
+getAppButton.addEventListener('click', () => {
     getAppButton.style.display = 'none';
-
-    const loadingDialog = document.getElementById('loadingDialog');
     loadingDialog.style.display = 'block';
 
     setTimeout(() => {
         if (deferredPrompt === undefined || deferredPrompt === null) {
-            const loadingDialog = document.getElementById('loadingDialog');
             loadingDialog.style.display = 'none';
-
-            const getAppButton = document.getElementById('installButton');
-            getAppButton.style.display = 'block';
+            installButton.style.display = 'block';
         }
-    }, 5000);
+    }, 3000);
+});
+
+dialogInstallButton.addEventListener('click', () => {
+    dialog.style.display = 'none';
+    overlay.style.display = 'none';
+
+    showInstallPromt();
+});
+
+overlay.addEventListener('click', () => {
+    dialog.style.display = 'none';
+    overlay.style.display = 'none';
 });
