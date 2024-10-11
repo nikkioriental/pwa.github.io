@@ -4,6 +4,7 @@ const dialog = document.getElementById('dialog');
 const overlay = document.getElementById('overlay');
 const installButton = document.getElementById('installButton');
 const dialogInstallButton = document.getElementById('dialogInstallButton');
+const dialogInstallSpinner = document.getElementById('dialogInstallSpinner');
 
 
 let deferredPrompt;
@@ -41,6 +42,7 @@ installButton.addEventListener('click', () => {
         setTimeout(() => {
             const isInstallDialogVisible = window.getComputedStyle(dialog).display !== 'none';
             if (isInstallDialogVisible) {
+                dialogInstallSpinner.style.display = 'none';
                 dialogInstallButton.style.display = 'block';
             }
         }, 3000);
@@ -59,6 +61,7 @@ function showInstallPromt() {
             console.log('User accepted the install prompt');
         } else {
             console.log('User dismissed the install prompt');
+            installButton.style.display = 'block';
         }
         localStorage.setItem('pwaInstallPromptShown', 'true');
         deferredPrompt = null;
