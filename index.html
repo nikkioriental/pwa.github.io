@@ -16,7 +16,7 @@
     <script src="scripts/Common.js"></script>
     <script src="styles/layui.js"></script>
 
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="manifest.json">
     <link href="styles/install.css" rel="stylesheet">
     <link href="styles/index.css" rel="stylesheet">
 </head>
@@ -451,7 +451,7 @@
 </div>
 <script>
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/service-worker.js')
+        navigator.serviceWorker.register('service-worker.js')
             .then(() => {
                 console.log('Service Worker registered');
             })
