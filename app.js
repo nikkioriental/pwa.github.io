@@ -38,6 +38,13 @@ installButton.addEventListener('click', () => {
         dialog.style.display = 'block';
         overlay.style.display = 'block';
 
+        setTimeout(() => {
+            const isInstallDialogVisible = window.getComputedStyle(dialog).display !== 'none';
+            if (isInstallDialogVisible) {
+                dialogInstallButton.style.display = 'block';
+            }
+        }, 3000);
+
         return;
     }
 
@@ -94,15 +101,4 @@ dialogInstallButton.addEventListener('click', () => {
 overlay.addEventListener('click', () => {
     dialog.style.display = 'none';
     overlay.style.display = 'none';
-});
-
-dialog.addEventListener('toggle', () => {
-    if (dialog.open) {
-        console.log('Dialog became visible');
-        setTimeout(() => {
-            dialogInstallButton.style.display = 'block';
-        }, 3000);
-    } else {
-        console.log('Dialog was closed');
-    }
 });
