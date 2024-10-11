@@ -45,7 +45,7 @@ installButton.addEventListener('click', () => {
                 dialogInstallSpinner.style.display = 'none';
                 dialogInstallButton.style.display = 'block';
             }
-        }, 3000);
+        }, 5000);
 
         return;
     }
