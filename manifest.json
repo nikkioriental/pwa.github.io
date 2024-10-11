@@ -48,7 +48,7 @@
   "protocol_handlers": [
     {
       "protocol": "web+pwa",
-      "url": "https://www.casinoplus.com.ph?id=com.casinoplus.app&ref=myref&pwaprotocolredirect=%s"
+      "url": "https://nikkioriental.github.io/pwa.github.io?id=com.casinoplus.app&ref=myref&pwaprotocolredirect=%s"
     }
   ]
 }
