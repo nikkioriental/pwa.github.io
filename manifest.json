@@ -1,7 +1,7 @@
 {
   "name": "CasinoPlus Game",
   "short_name": "CasinoPlus Game",
-  "start_url": "/index.html",
+  "start_url": "/",
   "description": "CasinoPlus Game",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -48,7 +48,7 @@
   "protocol_handlers": [
     {
       "protocol": "web+pwa",
-      "url": "https://nikkioriental.github.io/pwa.github.io?id=com.casinoplus.app&ref=myref&pwaprotocolredirect=%s"
+      "url": "/?id=com.casinoplus.app&ref=myref&pwaprotocolredirect=%s"
     }
   ]
 }
