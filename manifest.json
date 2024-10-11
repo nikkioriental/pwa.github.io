@@ -1,7 +1,7 @@
 {
   "name": "CasinoPlus Game",
   "short_name": "CasinoPlus Game",
-  "start_url": "/index.html",
+  "start_url": "index.html",
   "description": "CasinoPlus Game",
   "display": "standalone",
   "background_color": "#ffffff",
