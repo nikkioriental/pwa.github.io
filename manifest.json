@@ -44,5 +44,11 @@
       "type": "image/jpeg",
       "form_factor": "wide"
     }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+pwa",
+      "url": "https://www.casinoplus.com.ph?id=com.casinoplus.app&ref=myref&pwaprotocolredirect=%s"
+    }
   ]
 }
