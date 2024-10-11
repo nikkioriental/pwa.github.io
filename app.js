@@ -89,8 +89,3 @@ dialogInstallButton.addEventListener('click', () => {
 
     showInstallPromt();
 });
-
-overlay.addEventListener('click', () => {
-    dialog.style.display = 'none';
-    overlay.style.display = 'none';
-});
