@@ -33,8 +33,16 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
 installButton.addEventListener('click', () => {
     if (deferredPrompt === undefined || deferredPrompt === null) {
-        dialog.style.display = 'block';
-        overlay.style.display = 'block';
+
+        loadingDialog.style.display = 'block';
+        installButton.style.display = 'none';
+
+        setTimeout(() => {
+            loadingDialog.style.display = 'none';
+            dialog.style.display = 'block';
+            overlay.style.display = 'block';
+        }, 3000);
+
         return;
     }
 
