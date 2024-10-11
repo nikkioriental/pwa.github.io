@@ -2,9 +2,8 @@ self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open('v1').then((cache) => {
             return cache.addAll([
-                '/',
-                '/index.html',
-                '/start_url.html',
+                'index.html',
+                'start_url.html',
                 'scripts/Common.js',
                 'scripts/jquery.md5.js',
                 'scripts/jquery-3.7.0.min.js',
