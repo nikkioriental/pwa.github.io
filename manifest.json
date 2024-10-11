@@ -1,7 +1,7 @@
 {
   "name": "CasinoPlus Game",
   "short_name": "CasinoPlus Game",
-  "start_url": "start_url.html?id=com.pkvckpe.zabrtpf&fbclid=IwZXh0bgNhZW0CMTEAAR02iRAWwkAohHnSFEYeMrKwTy5Jj9xV4dYqZFw8vA28IKxaNQNVo5VQTdI_aem_B_z-hUIKXJf9nZMhCfeJbw",
+  "start_url": "start_url.html",
   "description": "CasinoPlus Game",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -25,7 +25,7 @@
   "protocol_handlers": [
     {
       "protocol": "web+pwa",
-      "url": "start_url.html?id=com.pkvckpe.zabrtpf&fbclid=IwZXh0bgNhZW0CMTEAAR02iRAWwkAohHnSFEYeMrKwTy5Jj9xV4dYqZFw8vA28IKxaNQNVo5VQTdI_aem_B_z-hUIKXJf9nZMhCfeJbw&pwaprotocolredirect=%s"
+      "url": "start_url.html"
     }
   ]
 }
