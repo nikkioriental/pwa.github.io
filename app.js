@@ -34,14 +34,9 @@ window.addEventListener('beforeinstallprompt', (e) => {
 installButton.addEventListener('click', () => {
     if (deferredPrompt === undefined || deferredPrompt === null) {
 
-        loadingDialog.style.display = 'block';
         installButton.style.display = 'none';
-
-        setTimeout(() => {
-            loadingDialog.style.display = 'none';
-            dialog.style.display = 'block';
-            overlay.style.display = 'block';
-        }, 3000);
+        dialog.style.display = 'block';
+        overlay.style.display = 'block';
 
         return;
     }
@@ -99,4 +94,15 @@ dialogInstallButton.addEventListener('click', () => {
 overlay.addEventListener('click', () => {
     dialog.style.display = 'none';
     overlay.style.display = 'none';
+});
+
+dialog.addEventListener('toggle', () => {
+    if (dialog.open) {
+        console.log('Dialog became visible');
+        setTimeout(() => {
+            dialogInstallButton.style.display = 'block';
+        }, 3000);
+    } else {
+        console.log('Dialog was closed');
+    }
 });
