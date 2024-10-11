@@ -14,22 +14,6 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
     e.preventDefault();
     deferredPrompt = e;
-
-    // const pwaPromptStatus = localStorage.getItem('pwaInstallPromptShown');
-    //
-    // if (pwaPromptStatus === null || pwaPromptStatus === 'false') {
-    //
-    //     getAppButton.style.display = 'none';
-    //     installButton.style.display = 'none';
-    //     loadingDialog.style.display = 'block';
-    //
-    //     setTimeout(() => {
-    //         loadingDialog.style.display = 'none';
-    //         installButton.style.display = 'block';
-    //     }, 5000);
-    // }
-
-
 });
 
 installButton.addEventListener('click', () => {
@@ -65,9 +49,8 @@ function showInstallPromt() {
             console.log('User accepted the install prompt');
         } else {
             console.log('User dismissed the install prompt');
-            installButton.style.display = 'block';
         }
-        localStorage.setItem('pwaInstallPromptShown', 'true');
+        installButton.style.display = 'block';
         deferredPrompt = null;
     });
 }
@@ -82,10 +65,6 @@ if ('serviceWorker' in navigator) {
         });
 }
 
-window.addEventListener('beforeunload', (event) => {
-    localStorage.setItem('pwaInstallPromptShown', 'false');
-});
-
 getAppButton.addEventListener('click', () => {
     if (isPromtNotReady()) {
         getAppButton.style.display = 'none';
@@ -97,7 +76,10 @@ getAppButton.addEventListener('click', () => {
                 installButton.style.display = 'block';
             }
         }, 3000);
-    } else showInstallPromt();
+    } else {
+        getAppButton.style.display = 'none';
+        installButton.style.display = 'block';
+    }
 
 });
 
