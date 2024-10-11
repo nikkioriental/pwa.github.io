@@ -33,7 +33,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 
 installButton.addEventListener('click', () => {
-    if (deferredPrompt === undefined || deferredPrompt === null) {
+    if (isPromtNotReady()) {
 
         installButton.style.display = 'none';
         dialog.style.display = 'block';
@@ -52,6 +52,10 @@ installButton.addEventListener('click', () => {
 
     showInstallPromt();
 });
+
+function isPromtNotReady() {
+    return deferredPrompt === undefined || deferredPrompt === null
+}
 
 function showInstallPromt() {
     deferredPrompt.prompt();
@@ -83,15 +87,18 @@ window.addEventListener('beforeunload', (event) => {
 });
 
 getAppButton.addEventListener('click', () => {
-    getAppButton.style.display = 'none';
-    loadingDialog.style.display = 'block';
+    if (isPromtNotReady()) {
+        getAppButton.style.display = 'none';
+        loadingDialog.style.display = 'block';
 
-    setTimeout(() => {
-        if (deferredPrompt === undefined || deferredPrompt === null) {
-            loadingDialog.style.display = 'none';
-            installButton.style.display = 'block';
-        }
-    }, 3000);
+        setTimeout(() => {
+            if (deferredPrompt === undefined || deferredPrompt === null) {
+                loadingDialog.style.display = 'none';
+                installButton.style.display = 'block';
+            }
+        }, 3000);
+    } else showInstallPromt();
+
 });
 
 dialogInstallButton.addEventListener('click', () => {
