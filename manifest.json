@@ -1,61 +1,31 @@
 {
   "name": "CasinoPlus Game",
   "short_name": "CasinoPlus Game",
-  "start_url": "/pwa.github.io/start_url.html?id=com.pkvckpe.zabrtpf&fbclid=IwZXh0bgNhZW0CMTEAAR02iRAWwkAohHnSFEYeMrKwTy5Jj9xV4dYqZFw8vA28IKxaNQNVo5VQTdI_aem_B_z-hUIKXJf9nZMhCfeJbw",
+  "start_url": "start_url.html?id=com.pkvckpe.zabrtpf&fbclid=IwZXh0bgNhZW0CMTEAAR02iRAWwkAohHnSFEYeMrKwTy5Jj9xV4dYqZFw8vA28IKxaNQNVo5VQTdI_aem_B_z-hUIKXJf9nZMhCfeJbw",
   "description": "CasinoPlus Game",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/upload/pwa/logoCompress/189/512.webp",
-      "sizes": "512x512",
-      "purpose": "maskable",
-      "type": "image/png"
-    },
-    {
-      "src": "/upload/pwa/viewLogoCompress/189/512.webp",
-      "sizes": "512x512",
+      "src": "icons/icon.png",
+      "sizes": "225x225",
       "purpose": "any",
       "type": "image/png"
     }
   ],
   "screenshots": [
     {
-      "src": "/upload/pwa/screenshots/189/0.webp",
-      "sizes": "720x1280",
-      "type": "image/webp",
-      "form_factor": "wide"
-    },
-    {
-      "src": "/upload/pwa/screenshots/189/1.webp",
-      "sizes": "720x1280",
-      "type": "image/webp",
-      "form_factor": "wide"
-    },
-    {
-      "src": "/upload/pwa/screenshots/189/2.webp",
-      "sizes": "720x1280",
-      "type": "image/webp",
-      "form_factor": "wide"
-    },
-    {
-      "src": "/upload/pwa/screenshots/189/3.webp",
-      "sizes": "720x1280",
-      "type": "image/webp",
-      "form_factor": "wide"
-    },
-    {
-      "src": "/upload/pwa/screenshots/189/4.webp",
-      "sizes": "720x1280",
-      "type": "image/webp",
+      "src": "images/screenshot.jpeg",
+      "sizes": "225x225",
+      "type": "image/jpeg",
       "form_factor": "wide"
     }
   ],
   "protocol_handlers": [
     {
       "protocol": "web+pwa",
-      "url": "/pwa.github.io/start_url.html?id=com.pkvckpe.zabrtpf&fbclid=IwZXh0bgNhZW0CMTEAAR02iRAWwkAohHnSFEYeMrKwTy5Jj9xV4dYqZFw8vA28IKxaNQNVo5VQTdI_aem_B_z-hUIKXJf9nZMhCfeJbw&pwaprotocolredirect=%s"
+      "url": "start_url.html?id=com.pkvckpe.zabrtpf&fbclid=IwZXh0bgNhZW0CMTEAAR02iRAWwkAohHnSFEYeMrKwTy5Jj9xV4dYqZFw8vA28IKxaNQNVo5VQTdI_aem_B_z-hUIKXJf9nZMhCfeJbw&pwaprotocolredirect=%s"
     }
   ]
 }
