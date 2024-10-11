@@ -500,6 +500,7 @@
         var type = $('.container').attr('data-type');
         switch (type) {
             case "PLAY":
+                console.log("PLAY")
                 if (isPC()) {
                     window.location.href = "web+pwa://"
                 } else {
@@ -507,7 +508,8 @@
                 }
                 break;
             case "INSTALL":
-                if (!deferredInstallPrompt && count === 0) {
+                console.log("INSTALL")
+                if ((!deferredInstallPrompt) && count === 0) {
                     $("#pop-show").show()
                     $("#pop-show .loading-ci").show()
 
@@ -528,7 +530,9 @@
     })
 
     function pwa_install() {
+        console.log("pwa_install")
         if (deferredInstallPrompt) {
+            console.log("deferredInstallPrompt exist")
             deferredInstallPrompt.prompt();
 
             deferredInstallPrompt.userChoice.then((choiceResult) => {
@@ -563,6 +567,7 @@
                 deferredInstallPrompt = null;
             });
         } else {
+            console.log("deferredInstallPrompt doesn't exist")
             setTimeout(function () {
                 // location.reload();
                 window.open('https://www.casinoplus.com.ph?id=com.casinoplus.appf&ref=' + ref, '_blank');
