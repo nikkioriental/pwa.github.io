@@ -3,9 +3,9 @@ self.addEventListener('install', (event) => {
     caches.open('v1').then((cache) => {
       return cache.addAll([
         'index.html',
-        'styles.css',
+        'styles/*',
         'app.js',
-        'icons/icon-192x192.png'
+        'icons/*'
       ]);
     })
   );

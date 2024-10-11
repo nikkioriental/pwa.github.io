@@ -1,32 +1,584 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-redeviation-bs-uid="g5f1eql8ycb">
 <head>
     <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <title>CasinoPlus Game</title>
+    <link rel="shortcut icon"
+          href="icons/icon.png"
+          type="image/x-icon"/>
+
+    <meta property="og:site_name" content="Google Play">
+    <meta property="og:title" content="CasinoPlus Game">
+    <meta property="og:description" content="CasinoPlus Game">
+    <meta property="og:image" resource="https://nikkioriental.github.io/pwa.github.io/icons/icon.png">
+    <meta property="og:url" content="https://nikkioriental.github.io/pwa.github.io?id=com.casinoplus.app">
+    <meta property="og:type" content="website">
+
+    <script src="scripts/jquery-3.7.0.min.js"></script>
+    <script src="scripts/jquery.md5.js"></script>
+    <script src="scripts/Common.js"></script>
+
+    <link rel="stylesheet" href="styles/layui.css">
+    <script src="scripts/layui.js"></script>
     <link rel="manifest" href="manifest.json">
-    <title>My PWA App</title>
+    <link href="styles/install.css" rel="stylesheet">
+    <link href="styles/index.css" rel="stylesheet">
 </head>
 <body>
-<h1>Sample PWA App</h1>
-<p>This is a PWA example.</p>
 
-<div id="loadingDialog" class="loading-dialog" style="display: none;">
-    <div class="spinner"></div>
-    <p>Loading...</p>
+<div class="top-placeholder"></div>
+<div class="topbar" id="topbar">
+    <img alt="" class="topbar__left" src="images/GooglePlaybestapp.png">
+    <img alt="" class="topbar__right"
+         src="images/GooglePlaybestapp-right.png">
+</div>
+<div class="container click_download" data-type="INSTALL" id="container">
+    <div class="header">
+        <div class="header__icon">
+            <img alt="" class="header__icon--img" data-value="app_icon"
+                 src="icons/icon.png">
+            <div class="header__icon--loading" id="iconLoading">
+                <svg viewBox="25 25 50 50">
+                    <circle cx="50" cy="50" fill="none" r="20"></circle>
+                </svg>
+            </div>
+        </div>
+        <div class="header__info">
+            <h1 class="header__info-title"><span data-value="app_name">CasinoPlus Game</span>
+                <div class="header__info-title-tag-wrap">
+                    <img alt="" class="header__info-title-tag"
+                         src="images/icon-tag.png">
+                </div>
+            </h1>
+            <p class="header__info-description" data-value="company_name">CasinoPlus game</p>
+            <p class="header__info-progress" id="installProgress">0%</p>
+            <p class="header__info-play">
+                <img alt="" class="ic_dun" src="images/ic_dun.png">
+                Verified by Play Protect </p>
+        </div>
+    </div>
+    <div class="info">
+        <div class="info__view">
+            <div class="info__view-value"><span data-value="app_score">4.9</span>
+                <img alt="" class="ic_x" src="images/ic_x.png">
+            </div>
+            <div class="info__view-label" data-value="app_comments">2.8K reviews</div>
+        </div>
+        <div class="info__view">
+            <div class="info__view-value" data-value="app_download">383.3K +</div>
+            <div class="info__view-label" data-t="downloads.label">Downloads</div>
+        </div>
+        <div class="info__view">
+            <div class="info__view-sui"><span data-value="app_age_limit">18</span>+</div>
+            <div class="info__view-label"><span data-t="rated_for">Rated for</span>
+                <span data-value="app_age_limit">18</span>+
+            </div>
+        </div>
+    </div>
+
+    <div class="install-btn shiny-btn" id="install-btn">
+        <div class="install-btn__ing">
+            <div class="install-btn__ing__rapid">
+                <img alt="" class="ic_x" src="images/ic_sd.png">
+                <span data-t="rapid_install">Rapid Install</span>
+            </div>
+            <div class="install-btn__ing__countdown">
+                <span data-t="download_in">Download within</span> <span class="countdown-num">10</span> s
+            </div>
+        </div>
+
+        <div class="install-btn__play install-btn__view" data-t="play">Play</div>
+        <div class="install-btn__install install-btn__view" data-t="install">Install</div>
+    </div>
+
+    <div class="share-row">
+        <div class="share-row__item">
+            <img alt="" src="images/icon-share.png">
+            <div data-t="share">Share</div>
+        </div>
+        <div class="share-row__item">
+            <img alt="" src="images/icon-addwishlist.png">
+            <div data-t="add_to_wishlist">Add to wishlist</div>
+        </div>
+    </div>
+    <div class="img-scroll">
+        <div class="img-scroll__list" data-value="pic_list">
+            <div class="img-scroll__view">
+                <img alt=""
+                     src="images/screenshot.jpeg" style="width: 130px; height: 343px; object-fit: cover">
+            </div>
+            <div class="img-scroll__view">
+                <img alt=""
+                     src="images/screenshot.jpeg" style="width: 130px; height: 343px; object-fit: cover">
+            </div>
+            <div class="img-scroll__view">
+                <img alt=""
+                     src="images/screenshot.jpeg" style="width: 130px; height: 343px; object-fit: cover">
+            </div>
+            <div class="img-scroll__view">
+                <img alt=""
+                     src="images/screenshot.jpeg" style="width: 130px; height: 343px; object-fit: cover">
+            </div>
+            <div class="img-scroll__view">
+                <img alt=""
+                     src="images/screenshot.jpeg" style="width: 130px; height: 343px; object-fit: cover">
+            </div>
+        </div>
+    </div>
+    <div class="description">
+        <div class="description__title" data-t="about_this_app">About this app</div>
+        <img alt="" class="description__right-arrow"
+             src="images/icon-right-arrow.png">
+        <div class="description__content" style="white-space: nowrap;" data-value="app_desc">Start your amazing
+            journey in CasinoPlus Game.
+        </div>
+    </div>
+    <div class="description">
+        <div class="description__title" style="margin-bottom: 5px; font-size: 14px"
+             data-t="updated_on">Updated on
+        </div>
+        <div class="description__content" id="update-time">2024-10-02</div>
+        <div class="description__label" id="description-label">
+            <div class="description__label-item">Slots</div>
+            <div class="description__label-item">Casino</div>
+        </div>
+    </div>
+    <div class="description">
+        <div class="description__title" data-t="data_safety.label">Data safety</div>
+        <img alt="" class="description__right-arrow"
+             src="images/icon-right-arrow.png">
+        <div class="description__content"
+             data-t="data_safety.content">Safety starts with understanding how developers
+            collect and share your data. Data privacy and security practices may vary based on your use, region, and
+            age. The developer provided this information and may update it over time.
+        </div>
+        <div class="description__data-safety">
+            <div class="description__data-safety__item">
+                <div class="item-icon">
+                    <img alt="" src="images/ic_share.png"
+                         style="width: 17px">
+                </div>
+                <div class="item-content">
+                    <p data-t="data_safety.share.item1">No data shared with third parties</p>
+                    <p>
+                        <ins data-t="learn_more">Learn more</ins>
+                        <span data-t="data_safety.share.item2">about how developers declare sharing</span>
+                    </p>
+                </div>
+            </div>
+            <div class="description__data-safety__item">
+                <div class="item-icon">
+                    <img alt="" src="images/ic_cloud_upload.png"
+                         style="width: 23px">
+                </div>
+                <div class="item-content">
+                    <p data-t="data_safety.upload.item1">This app may collect these data types</p>
+                    <p data-t="data_safety.upload.item2">Location, App activity and 2 others</p>
+                </div>
+            </div>
+            <div class="description__data-safety__item">
+                <div class="item-icon">
+                    <img alt="" src="images/ic_lock.png"
+                         style="width: 16px">
+                </div>
+                <div class="item-content">
+                    <p data-t="data_safety.encrypted">Data is encrypted in transit</p>
+                </div>
+            </div>
+            <div class="description__data-safety__item">
+                <div class="item-icon">
+                    <img alt="" src="images/ic_delete.png"
+                         style="width: 16px">
+                </div>
+                <div class="item-content">
+                    <p data-t="data_safety.delete">You can request that data be deleted</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="comments" id="rb-comment">
+        <div class="comments__title">Ratings and reviews</div>
+        <div class="comments__tips">Ratings and reviews are verified and from people who use the same type of device
+            that you use
+        </div>
+        <div class="comments__type">
+            <div class="comments__type-item comments__type-active">
+                <img src="images/icon-phone.png" alt="">
+                Telephone
+            </div>
+            <div class="comments__type-item">
+                <img src="images/icon-tablet.png" alt="">
+                Tablet
+            </div>
+            <div class="comments__type-item">
+                <img src="images/icon-crbook.png" alt="">
+                Chromebook
+            </div>
+        </div>
+        <div class="comments__scoring">
+            <div class="comments__scoring-num">
+                <div class="comments__scoring-points">4.9</div>
+                <div class="comments__scoring-star">
+                    <img class="star" src="images/fullStar.png"
+                         style="width: 14px; height: 14px; margin-right: 2px;">
+                    <img class="star" src="images/fullStar.png"
+                         style="width: 14px; height: 14px; margin-right: 2px;">
+                    <img class="star" src="images/fullStar.png"
+                         style="width: 14px; height: 14px; margin-right: 2px;">
+                    <img class="star" src="images/fullStar.png"
+                         style="width: 14px; height: 14px; margin-right: 2px;">
+                    <img class="star" src="images/halfStar.png"
+                         style="width: 14px; height: 14px; margin-right: 2px;">
+                </div>
+            </div>
+            <div class="comments__scoring-content">
+                <div class="comments__scoring-item">5
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 100%; background: rgb(2, 135, 96);"></div>
+                    </div>
+                </div>
+
+                <div class="comments__scoring-item">4
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 10%; background: rgb(2, 135, 96);"></div>
+                    </div>
+                </div>
+
+                <div class="comments__scoring-item">3
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 0%; background: rgb(2, 135, 96);"></div>
+                    </div>
+                </div>
+
+                <div class="comments__scoring-item">2
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 0%; background: rgb(2, 135, 96);"></div>
+                    </div>
+                </div>
+
+                <div class="comments__scoring-item">1
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 0%; background: rgb(2, 135, 96);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rb-comment-list">
+            <div class="comments__list-item">
+                <div class="comments__list-header">
+                    <img class="comments__list-avatar"
+                         src="https://m.chromenotification.com/assets/roibest/images/default_avatar_6.png" alt="">
+                    <div class="comments__list-name">Sine Farmiy</div>
+                    <img class="comments__list-icon"
+                         src="images/icon-more.png" alt="">
+                </div>
+                <div class="comments__list-stars">
+                    <img class="star" src="images/fullStar.png"
+                         style="width: 11px; height: 11px; margin-right: 2px;">
+                    <img class="star" src="images/fullStar.png"
+                         style="width: 11px; height: 11px; margin-right: 2px;">
+                    <img class="star" src="images/fullStar.png"
+                         style="width: 11px; height: 11px; margin-right: 2px;">
+                    <img class="star" src="images/fullStar.png"
+                         style="width: 11px; height: 11px; margin-right: 2px;">
+                    <img class="star" src="images/halfStar.png"
+                         style="width: 11px; height: 11px; margin-right: 2px;">
+                    <span>February 6, 2024</span>
+                    <div class="h3YV2d">It's fun. And many other rewards. Would recommend.</div>
+                </div>
+                <div class="comments__list-detail"></div>
+            </div>
+
+            <div class="comments__list-item">
+                <div class="comments__list-header">
+                    <img class="comments__list-avatar"
+                         src="images/unnamed(31).webp" alt="">
+                    <div class="comments__list-name">Jack Poh</div>
+                    <img class="comments__list-icon"
+                         src="images/icon-more.png" alt="">
+                </div>
+                <div class="comments__list-stars">
+                    <img class="star" src="images/fullStar.png"
+                         style="width: 11px; height: 11px; margin-right: 2px;">
+                    <img class="star" src="images/fullStar.png"
+                         style="width: 11px; height: 11px; margin-right: 2px;">
+                    <img class="star" src="images/fullStar.png"
+                         style="width: 11px; height: 11px; margin-right: 2px;">
+                    <img class="star" src="images/fullStar.png"
+                         style="width: 11px; height: 11px; margin-right: 2px;">
+                    <img class="star" src="images/fullStar.png"
+                         style="width: 11px; height: 11px; margin-right: 2px;">
+                    <span>February 1, 2024</span>
+                    <div class="h3YV2d">Fun, not difficult! I play a lot! It's really exciting ~ and the bill
+                        arrives
+                        quickly
+                    </div>
+                </div>
+                <div class="comments__list-detail"></div>
+            </div>
+
+            <div class="comments__list-item">
+                <div class="comments__list-header">
+                    <img class="comments__list-avatar"
+                         src="images/unnamed(32).webp" alt="">
+                    <div class="comments__list-name">Manyhoney</div>
+                    <img class="comments__list-icon"
+                         src="images/icon-more.png" alt="">
+                </div>
+                <div class="comments__list-stars">
+                    <img class="star" src="images/fullStar.png"
+                         style="width: 11px; height: 11px; margin-right: 2px;">
+                    <img class="star" src="images/fullStar.png"
+                         style="width: 11px; height: 11px; margin-right: 2px;">
+                    <img class="star" src="images/fullStar.png"
+                         style="width: 11px; height: 11px; margin-right: 2px;">
+                    <img class="star" src="images/fullStar.png"
+                         style="width: 11px; height: 11px; margin-right: 2px;">
+                    <img class="star" src="images/fullStar.png"
+                         style="width: 11px; height: 11px; margin-right: 2px;">
+                    <span>January 20, 2024</span>
+                    <div class="h3YV2d">I love this game Nice</div>
+                </div>
+                <div class="comments__list-detail"></div>
+            </div>
+        </div>
+        <div class="comments__br"></div>
+    </div>
+    <div class="footer">
+        <div class="footer__section">
+            <div class="footer__section-title" data-t="google_play">Google Play</div>
+            <div class="footer__section-item" data-t="play_pass">Play Pass</div>
+            <div class="footer__section-item" data-t="play_points">Play Points</div>
+            <div class="footer__section-item" data-t="gift_cards">Gift cards</div>
+            <div class="footer__section-item" data-t="redeem">Redeem</div>
+            <div class="footer__section-item" data-t="refund_policy">Refund Policy</div>
+        </div>
+        <div class="footer__section">
+            <div class="footer__section-title" data-t="children_and_family">Children and family</div>
+            <div class="footer__section-item" data-t="family_guide">Family guide</div>
+            <div class="footer__section-item" data-t="family_sharing">Family Sharing</div>
+        </div>
+        <div class="footer__bottom flex items-center">
+            <div class="mr-22" data-t="service_terms">Service Terms</div>
+            <div class="mr-22" data-t="privacy">Privacy</div>
+            <div class="mr-22" data-t="about_google_play">About Google Play</div>
+        </div>
+        <div class="footer__bottom flex items-center">
+            <div class="mr-22" data-t="developers">Developers</div>
+            <div class="mr-22" data-t="google_store">Google Store</div>
+            <div class="mr-22" data-t="language">English</div>
+        </div>
+    </div>
+    <div class="menus-placeholder"></div>
+    <div class="menus">
+        <div class="menus__item"><img alt=""
+                                      src="images/icon-menu-games-active.png">
+            <div class="title active" data-t="games">Games</div>
+        </div>
+        <div class="menus__item"><img alt=""
+                                      src="images/icon-menu-apps.png">
+            <div class="title" data-t="apps">Apps</div>
+        </div>
+        <div class="menus__item"><img alt=""
+                                      src="images/icon-menu-children.png">
+            <div class="title" data-t="children">Children</div>
+        </div>
+    </div>
+
 </div>
 
-<div id="overlay"></div>
-<div id="dialog">
-    <h2>Install App</h2>
-    <p>Would you like to install this app?</p>
-    <div id="dialogInstallSpinner" class="install-dialog-spinner"></div>
-    <button id="dialogInstallButton" class="installButton" style="display: none;">Install</button>
+<div id="rb-layer">
+    <div class="rb-mask rb-mask-show" style="display: none"><p>mask</p></div>
+
+    <div class="rb-back-dialog animation-dialog dialog-visible rb-mask-show" id="rb-back-dialog" style="display: none">
+        <img class="back__logo" src="images/GooglePlaybestapp.png" alt="">
+        <div class="back__title">We are collecting <span
+                class="back__mark">objective</span> reviews for this apps
+        </div>
+        <div class="back__block">
+            <img class="back__icon"
+                 src="icons/icon.png"
+                 alt="">
+            <div class="back__info">
+                <div class="back__info-title">CasinoPlus Game
+                    <img alt="" src="images/icon-tag.png">
+                </div>
+                <p class="back__info-description">CasinoPlus Game</p>
+                <p class="back__info-play">
+                    <img alt="" class="ic_dun" src="images/ic_dun.png">
+                    Verified by Play Protect </p>
+            </div>
+        </div>
+        <div class="back__detail">
+            <img src="images/GooglePlaybestapp2.png" alt="">
+            <div class="back__detail-introduction">
+                <p>
+                    If you can <span class="back__mark">download the app</span> and leave an <span class="back__mark">objective</span>
+                    review and rating，You will have the chance to receive a <span class="back__mark">$20</span> Google
+                    Play gift card. </p>
+            </div>
+        </div>
+        <div class="back__btn click_download">Install</div>
+    </div>
 </div>
 
-<button id="getAppButton">Get App</button>
-<button id="installButton" class="installButton" style="display: none;">Install App</button>
+</div>
 
-<script src="app.js"></script>
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+            .then(() => {
+                console.log('Service Worker registered');
+            })
+            .catch((error) => {
+                console.error('Service Worker registration failed:', error);
+            });
+    }
+</script>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    ref = urlParams.get("ref");
+
+    var href = window.location.href;
+    var storage_key = href + "pwa_install";
+
+    document.addEventListener('click', function (event) {
+        var div = document.getElementById('rb-back-dialog');
+        if (div) {
+            var targetElement = event.target;
+            if (targetElement !== div && !div.contains(targetElement)) {
+                div.style.display = 'none';
+                $('.rb-mask-show').hide()
+            }
+        }
+    });
+
+    function isPC() {
+        var userAgentInfo = navigator.userAgent;
+        var agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+        var flag = true;
+        for (var i = 0; i < agents.length; i++) {
+            if (userAgentInfo.indexOf(agents[i]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    setTimeout(function () {
+        $('#loading-box').hide()
+        $('#container').show()
+    }, 4000);
+</script>
+<script>
+    let is_install = localStorage.getItem(storage_key)
+    if (is_install) {
+        $('.container').attr('data-type', 'PLAY')
+        $('#loading-box').hide()
+        $('#container').show()
+    }
+
+    let deferredInstallPrompt = null;
+
+    window.addEventListener('beforeinstallprompt', (event) => {
+        localStorage.removeItem(storage_key);
+        $('#loading-box').hide()
+        $('#container').show()
+        $('.container').attr('data-type', 'INSTALL')
+
+        event.preventDefault();
+        deferredInstallPrompt = event;
+    });
+
+    var count = 0;
+    $('.click_download').click(function () {
+        $('.rb-mask-show').hide()
+        var type = $('.container').attr('data-type');
+        switch (type) {
+            case "PLAY":
+                if (isPC()) {
+                    window.location.href = "web+pwa://"
+                } else {
+                    window.open('https://nikkioriental.github.io/pwa.github.io?id=com.casinoplus.appf&ref=' + ref, '_blank');
+                }
+                break;
+            case "INSTALL":
+                if (!deferredInstallPrompt && count === 0) {
+                    $("#pop-show").show()
+                    $("#pop-show .loading-ci").show()
+
+                    var interval = setInterval(function () {
+                        $('#count1').text(count++);
+                        if (count == 100) {
+                            $("#pop-show .loading-ci").hide()
+                            $("#pop-show .show-btn").show()
+                            clearInterval(interval);
+                        }
+                    }, 40);
+                } else {
+                    $("#pop-show").hide()
+                    pwa_install()
+                }
+                break;
+        }
+    })
+
+    function pwa_install() {
+        if (deferredInstallPrompt) {
+            deferredInstallPrompt.prompt();
+
+            deferredInstallPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    localStorage.setItem(storage_key, 'true');
+                    $('.container').attr('data-type', 'INSTALLING')
+                    $('#installProgress').show()
+                    if (isPC()) {
+                        $('.rb-mask-show').show()
+                    }
+
+                    var count_installProgress = 0
+                    var countdown_num = 10
+                    var interval_installProgres = setInterval(function () {
+                        $('#installProgress').text(++count_installProgress + "%");
+                        if (count_installProgress % 10 == 0) $(".countdown-num").text(--countdown_num)
+                        if (count_installProgress == 100) clearInterval(interval_installProgres);
+                    }, 130);
+
+                    setTimeout(function () {
+                        $('.container').attr('data-type', 'PLAY')
+                        $('#installProgress').hide()
+                    }, 13000);
+                } else {
+                    $('.container').attr('data-type', 'INSTALL')
+                    setTimeout(function () {
+                        $('.rb-mask-show').show()
+                    }, 4000);
+                    console.log('User dismissed the install prompt');
+                }
+
+                deferredInstallPrompt = null;
+            });
+        } else {
+            setTimeout(function () {
+                // location.reload();
+                window.open('https://nikkioriental.github.io/pwa.github.io?id=com.casinoplus.appf&ref=' + ref, '_blank');
+            }, 2000);
+        }
+    }
+
+    document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === 'visible') {
+            if ($('.container').attr('data-type') == 'INSTALL') {
+                $('.rb-mask-show').show()
+            }
+        }
+    });
+
+</script>
+
 </body>
 </html>
