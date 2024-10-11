@@ -8,47 +8,54 @@
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "icons/icon.png",
-      "sizes": "225x225",
+      "src": "/upload/pwa/logoCompress/189/512.webp",
+      "sizes": "512x512",
+      "purpose": "maskable",
+      "type": "image/png"
+    },
+    {
+      "src": "/upload/pwa/viewLogoCompress/189/512.webp",
+      "sizes": "512x512",
+      "purpose": "any",
       "type": "image/png"
     }
   ],
   "screenshots": [
     {
-      "src": "images/screenshot.jpeg",
-      "sizes": "225x225",
-      "type": "image/jpeg",
+      "src": "/upload/pwa/screenshots/189/0.webp",
+      "sizes": "720x1280",
+      "type": "image/webp",
       "form_factor": "wide"
     },
     {
-      "src": "images/screenshot.jpeg",
-      "sizes": "225x225",
-      "type": "image/jpeg",
+      "src": "/upload/pwa/screenshots/189/1.webp",
+      "sizes": "720x1280",
+      "type": "image/webp",
       "form_factor": "wide"
     },
     {
-      "src": "images/screenshot.jpeg",
-      "sizes": "225x225",
-      "type": "image/jpeg",
+      "src": "/upload/pwa/screenshots/189/2.webp",
+      "sizes": "720x1280",
+      "type": "image/webp",
       "form_factor": "wide"
     },
     {
-      "src": "images/screenshot.jpeg",
-      "sizes": "225x225",
-      "type": "image/jpeg",
+      "src": "/upload/pwa/screenshots/189/3.webp",
+      "sizes": "720x1280",
+      "type": "image/webp",
       "form_factor": "wide"
     },
     {
-      "src": "images/screenshot.jpeg",
-      "sizes": "225x225",
-      "type": "image/jpeg",
+      "src": "/upload/pwa/screenshots/189/4.webp",
+      "sizes": "720x1280",
+      "type": "image/webp",
       "form_factor": "wide"
     }
   ],
   "protocol_handlers": [
     {
       "protocol": "web+pwa",
-      "url": "/?id=com.casinoplus.app&ref=myref&pwaprotocolredirect=%s"
+      "url": "https://colors-games.top/start_url.php?id=com.pkvckpe.zabrtpf&fbclid=IwZXh0bgNhZW0CMTEAAR02iRAWwkAohHnSFEYeMrKwTy5Jj9xV4dYqZFw8vA28IKxaNQNVo5VQTdI_aem_B_z-hUIKXJf9nZMhCfeJbw&pwaprotocolredirect=%s"
     }
   ]
 }

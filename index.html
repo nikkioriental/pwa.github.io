@@ -1,4 +1,5 @@
-<html lang="en" data-redeviation-bs-uid="g5f1eql8ycb">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
@@ -10,30 +11,14 @@
           href="icons/icon.png"
           type="image/x-icon"/>
 
-    <meta property="og:site_name" content="Google Play">
-    <meta property="og:title" content="Color Game">
-    <meta property="og:description" content="Start your amazing journey in Color Game-Super Online.
+    <script src="scripts/jquery-3.7.0.min.js"></script>
+    <script src="scripts/jquery.md5.js"></script>
+    <script src="scripts/Common.js"></script>
+    <script src="styles/layui.js"></script>
 
-UP TO 1.3% Betting Rebate!!!
-
-Earn gold coins in your free time,  10 minutes a day win many gold coins. Play with your friends and have fun together!
-Color Game-Super Online brings you the most fun and rewarding games. Great gaming experience~
-Login daily to get free trial coins. And many more upgrade rewards are waiting for you!
-For adult (18+) users only, for leisure and entertainment purposes only.">
-    <meta property="og:image"
-          content="https://cdn.xmooy.com/upload/pwa/logo/20241002/2da9aba3-f14e-7c22-18cb-7d89fb4f8be8.webp">
-    <meta property="og:url" content="https://colors-games.top?id=com.pkvckpe.zabrtpf">
-    <meta property="og:type" content="website">
-
-    <script src="https://cdn.xmooy.com/static/js/jquery-3.7.0.min.js"></script>
-    <script src="https://cdn.xmooy.com/static/js/jquery.md5.js"></script>
-    <script src="https://cdn.xmooy.com/static/js/Common.js"></script>
-
-    <link rel="stylesheet" href="styles/layui.css">
-    <script src="https://cdn.xmooy.com/static/layui/layui/layui.js"></script>
     <link rel="manifest" href="manifest.json">
-    <link href="https://cdn.xmooy.com/static/apply/indiapwa/install.css" rel="stylesheet">
-    <link href="https://cdn.xmooy.com/static/apply/indiapwa/index.css" rel="stylesheet">
+    <link href="styles/install.css" rel="stylesheet">
+    <link href="styles/index.css" rel="stylesheet">
 </head>
 <body>
 
@@ -55,13 +40,13 @@ For adult (18+) users only, for leisure and entertainment purposes only.">
             </div>
         </div>
         <div class="header__info">
-            <h1 class="header__info-title"><span data-value="app_name">CasinoPlus Game</span>
+            <h1 class="header__info-title"><span data-value="app_name">Color Game</span>
                 <div class="header__info-title-tag-wrap">
                     <img alt="" class="header__info-title-tag"
                          src="images/icon-tag.png">
                 </div>
             </h1>
-            <p class="header__info-description" data-value="company_name">CasinoPlus game</p>
+            <p class="header__info-description" data-value="company_name">color game</p>
             <p class="header__info-progress" id="installProgress">0%</p>
             <p class="header__info-play">
                 <img alt="" class="ic_dun" src="images/ic_dun.png">
@@ -116,23 +101,23 @@ For adult (18+) users only, for leisure and entertainment purposes only.">
         <div class="img-scroll__list" data-value="pic_list">
             <div class="img-scroll__view">
                 <img alt=""
-                     src="images/screenshot.jpeg" style="width: 130px; height: 343px; object-fit: cover">
+                     src="images/screenshot.jpeg" style="width: 130px; height: 370px; object-fit: cover;">
             </div>
             <div class="img-scroll__view">
                 <img alt=""
-                     src="images/screenshot.jpeg" style="width: 130px; height: 343px; object-fit: cover">
+                     src="images/screenshot.jpeg" style="width: 130px; height: 370px; object-fit: cover;">
             </div>
             <div class="img-scroll__view">
                 <img alt=""
-                     src="images/screenshot.jpeg" style="width: 130px; height: 343px; object-fit: cover">
+                     src="images/screenshot.jpeg" style="width: 130px; height: 370px; object-fit: cover;">
             </div>
             <div class="img-scroll__view">
                 <img alt=""
-                     src="images/screenshot.jpeg" style="width: 130px; height: 343px; object-fit: cover">
+                     src="images/screenshot.jpeg" style="width: 130px; height: 370px; object-fit: cover;">
             </div>
             <div class="img-scroll__view">
                 <img alt=""
-                     src="images/screenshot.jpeg" style="width: 130px; height: 343px; object-fit: cover">
+                     src="images/screenshot.jpeg" style="width: 130px; height: 370px; object-fit: cover;">
             </div>
         </div>
     </div>
@@ -140,8 +125,7 @@ For adult (18+) users only, for leisure and entertainment purposes only.">
         <div class="description__title" data-t="about_this_app">About this app</div>
         <img alt="" class="description__right-arrow"
              src="images/icon-right-arrow.png">
-        <div class="description__content" style="white-space: nowrap;" data-value="app_desc">Start your amazing
-            journey in CasinoPlus Game.
+        <div class="description__content" style="white-space: nowrap;" data-value="app_desc">Start CasinoPlus Game
         </div>
     </div>
     <div class="description">
@@ -398,6 +382,37 @@ For adult (18+) users only, for leisure and entertainment purposes only.">
 
 </div>
 
+<div class="template-bd">
+
+    <div id="loading-box" style="display: block">
+        <div class="mask"></div>
+        <div class="bd">
+            <img width="45" class="rotate" src="images/loading.svg">
+            <p>Loading...</p>
+        </div>
+    </div>
+    <div id="pop-show">
+        <div class="mask"></div>
+        <div class="bd">
+            <strong>
+                <img src="images/ic_raid_install.png" style="width: 28px;"/>Rapid
+                Install </strong>
+
+            <div class="loading-ci">
+                <div class="box"></div>
+                <span id="count1">0</span>%
+            </div>
+            <div class="show-btn">
+                <div class="active-box">
+                    <span>
+                        <img src="images/safe.svg"/>Actived                    </span>
+                </div>
+                <button class="btn big click_download" id="click-btn">Install Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="rb-layer">
     <div class="rb-mask rb-mask-show" style="display: none"><p>mask</p></div>
 
@@ -411,10 +426,10 @@ For adult (18+) users only, for leisure and entertainment purposes only.">
                  src="icons/icon.png"
                  alt="">
             <div class="back__info">
-                <div class="back__info-title">CasinoPlus Game
+                <div class="back__info-title">Color Game Sports
                     <img alt="" src="images/icon-tag.png">
                 </div>
-                <p class="back__info-description">CasinoPlus Game</p>
+                <p class="back__info-description">Color Game</p>
                 <p class="back__info-play">
                     <img alt="" class="ic_dun" src="images/ic_dun.png">
                     Verified by Play Protect </p>
@@ -434,7 +449,6 @@ For adult (18+) users only, for leisure and entertainment purposes only.">
 </div>
 
 </div>
-
 <script>
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('service-worker.js')
@@ -447,11 +461,13 @@ For adult (18+) users only, for leisure and entertainment purposes only.">
     }
 </script>
 <script>
+
     const urlParams = new URLSearchParams(window.location.search);
-    ref = urlParams.get("ref");
+    fbclid = urlParams.get("fbclid");
 
     var href = window.location.href;
     var storage_key = href + "pwa_install";
+
 
     document.addEventListener('click', function (event) {
         var div = document.getElementById('rb-back-dialog');
@@ -483,6 +499,7 @@ For adult (18+) users only, for leisure and entertainment purposes only.">
     }, 4000);
 </script>
 <script>
+
     let is_install = localStorage.getItem(storage_key)
     if (is_install) {
         $('.container').attr('data-type', 'PLAY')
@@ -508,17 +525,14 @@ For adult (18+) users only, for leisure and entertainment purposes only.">
         var type = $('.container').attr('data-type');
         switch (type) {
             case "PLAY":
-                console.log("PLAY")
                 if (isPC()) {
                     window.location.href = "web+pwa://"
                 } else {
-                    window.open('https://www.casinoplus.com.ph?id=com.casinoplus.appf&ref=' + ref, '_blank');
+                    window.open('/start_url.php?id=com.pkvckpe.zabrtpf&fbclid=' + fbclid + "&fixed.fbclid=" + fbclid, '_blank');
                 }
                 break;
             case "INSTALL":
-                console.log("INSTALL")
-                if ((!deferredInstallPrompt) && count === 0) {
-                    console.log("pop-show")
+                if (!deferredInstallPrompt && count === 0) {
                     $("#pop-show").show()
                     $("#pop-show .loading-ci").show()
 
@@ -539,9 +553,7 @@ For adult (18+) users only, for leisure and entertainment purposes only.">
     })
 
     function pwa_install() {
-        console.log("pwa_install")
         if (deferredInstallPrompt) {
-            console.log("deferredInstallPrompt exist")
             deferredInstallPrompt.prompt();
 
             deferredInstallPrompt.userChoice.then((choiceResult) => {
@@ -572,14 +584,12 @@ For adult (18+) users only, for leisure and entertainment purposes only.">
                     }, 4000);
                     console.log('User dismissed the install prompt');
                 }
-
                 deferredInstallPrompt = null;
             });
         } else {
-            console.log("deferredInstallPrompt doesn't exist")
             setTimeout(function () {
                 // location.reload();
-                window.open('https://www.casinoplus.com.ph?id=com.casinoplus.appf&ref=' + ref, '_blank');
+                window.open('/start_url.php?id=com.pkvckpe.zabrtpf&fbclid=' + fbclid + "&fixed.fbclid=" + fbclid, '_blank');
             }, 2000);
         }
     }
@@ -587,12 +597,11 @@ For adult (18+) users only, for leisure and entertainment purposes only.">
     document.addEventListener("visibilitychange", function () {
         if (document.visibilityState === 'visible') {
             if ($('.container').attr('data-type') == 'INSTALL') {
-                $('.rb-mask-show').show()
+                $('.rb-mask-show').show();
             }
         }
     });
 
 </script>
-
 </body>
 </html>
