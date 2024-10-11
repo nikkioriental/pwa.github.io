@@ -1,7 +1,7 @@
 {
   "name": "CasinoPlus Game",
   "short_name": "CasinoPlus Game",
-  "start_url": "https://nikkioriental.github.io/pwa.github.io/start_url.html",
+  "start_url": "/",
   "description": "CasinoPlus Game",
   "display": "standalone",
   "background_color": "#ffffff",

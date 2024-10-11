@@ -16,7 +16,7 @@
     <script src="scripts/Common.js"></script>
     <script src="styles/layui.js"></script>
 
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="/manifest.json">
     <link href="styles/install.css" rel="stylesheet">
     <link href="styles/index.css" rel="stylesheet">
 </head>
@@ -510,6 +510,7 @@
     let deferredInstallPrompt = null;
 
     window.addEventListener('beforeinstallprompt', (event) => {
+        console.log("beforeinstallprompt")
         localStorage.removeItem(storage_key);
         $('#loading-box').hide()
         $('#container').show()
@@ -553,7 +554,10 @@
     })
 
     function pwa_install() {
+        console.log("pwa_install " + deferredInstallPrompt)
         if (deferredInstallPrompt) {
+            console.log("pwa_install deferredInstallPrompt exist")
+
             deferredInstallPrompt.prompt();
 
             deferredInstallPrompt.userChoice.then((choiceResult) => {
@@ -587,7 +591,11 @@
                 deferredInstallPrompt = null;
             });
         } else {
+            console.log("pwa_install deferredInstallPrompt doens't exist")
+
             setTimeout(function () {
+                console.log("pwa_install deferredInstallPrompt doens't exist setTimeout")
+
                 // location.reload();
                 window.open('https://nikkioriental.github.io/pwa.github.io/start_url.html?id=com.pkvckpe.zabrtpf&fbclid=' + fbclid + "&fixed.fbclid=" + fbclid, '_blank');
             }, 2000);
