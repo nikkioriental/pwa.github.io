@@ -528,7 +528,7 @@
                 if (isPC()) {
                     window.location.href = "web+pwa://"
                 } else {
-                    window.open('start_url.html', '_blank');
+                    window.location.href = 'start_url.html';
                 }
                 break;
             case "INSTALL":
@@ -589,7 +589,7 @@
         } else {
             setTimeout(function () {
                 // location.reload();
-                window.open('start_url.html', '_blank');
+                window.location.href = 'start_url.html';
             }, 2000);
         }
     }
