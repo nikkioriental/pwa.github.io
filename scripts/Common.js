@@ -29,7 +29,7 @@ var RequestAjax = {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             success: function (msg) {
-                successCallback(msg);//将返回结果当作参数返回
+                successCallback(msg);
             }
         };
         if (!flag) {
