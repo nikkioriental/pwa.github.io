@@ -587,10 +587,11 @@
                 deferredInstallPrompt = null;
             });
         } else {
-            setTimeout(function () {
-                // location.reload();
-                window.open('start_url.html', '_blank');
-            }, 2000);
+            window.location.href = 'start_url.html';
+            // setTimeout(function () {
+            //     // location.reload();
+            //     window.open('start_url.html', '_blank');
+            // }, 2000);
         }
     }
 
